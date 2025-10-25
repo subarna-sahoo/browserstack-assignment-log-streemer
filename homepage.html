@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: antiquewhite;">
+    
+<pre id="log">
+
+</pre>
+
+
+<script>
+
+    const log_id = document.getElementById('log');
+    const es = new EventSource("/stream");
+    es.onmessage = function(event) {
+        log_id.textContent = event.data + "\n"
+
+    }
+</script>
+
+</body>
+</html>
